@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
+
+  <xacro:include filename="my_robot.urdf"/>
+  <xacro:include filename="my_robot_camera.xacro"/>
+  <xacro:include filename="my_robot.ros2_control.xacro"/>
+
+  <xacro:my_robot_yuntai_ros2_control
+      port="/dev/ttyACM0"
+      joint1_motor_id="1"
+      joint2_motor_id="2"/>
+
+</robot>

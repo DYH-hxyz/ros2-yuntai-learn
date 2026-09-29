@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
+    <!-- Import my_robot urdf file -->
+    <!-- my_robot_description 里已经包含真机的 <ros2_control>（my_robot_hardware/YuntaiHardwareInterface），
+         这里不能再加第二段 ros2_control，否则关节接口重复、controller_manager 会报 already existing key -->
+    <xacro:include filename="$(find my_robot_description)/urdf/my_robot.urdf.xacro" />
+
+</robot>

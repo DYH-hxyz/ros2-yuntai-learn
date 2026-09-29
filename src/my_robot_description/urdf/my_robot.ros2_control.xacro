@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="my_robot_yuntai_ros2_control"
+               params="name:=YuntaiSystem
+                       port:=/dev/ttyACM0
+                       joint1_motor_id:=1
+                       joint2_motor_id:=2">
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <!-- <plugin>mock_components/GenericSystem</plugin>
+        <param name="calculate_dynamics">true</param> -->
+
+        <plugin>my_robot_hardware/YuntaiHardwareInterface</plugin>
+        <param name="port">${port}</param>
+        <param name="joint1_motor_id">${joint1_motor_id}</param>
+        <param name="joint2_motor_id">${joint2_motor_id}</param>
+      </hardware>
+
+      <joint name="yuntai_joint1">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+
+      <joint name="yuntai_joint2">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+      </joint>
+    </ros2_control>
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="my_robot">
+
+  <material name="white">
+    <color rgba="1 1 1 1" />
+  </material>
+
+  <link name="base_footprint"/>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.00300451980276256 -0.0100336165918526 0.0181072277782003" rpy="0 0 0" />
+      <mass value="0.0328981496900704" />
+      <inertia ixx="2.84860896960679E-06" ixy="2.66287549879154E-08" ixz="-5.78756105139677E-09"
+               iyy="8.24393549329368E-06" iyz="-1.99684915684532E-10" izz="6.45357713275226E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://my_robot_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="white" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://my_robot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link1">
+    <inertial>
+      <origin xyz="1.73472347597681E-17 -3.46944695195361E-18 0.0200017378793156" rpy="0 0 0" />
+      <mass value="0.00797150054395293" />
+      <inertia ixx="2.6031213854509E-06" ixy="6.55928376360409E-22" ixz="-1.78064190672032E-21"
+               iyy="4.96462690451124E-06" iyz="-3.95128921271933E-22" izz="2.92724332929689E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://my_robot_description/meshes/link1.STL" />
+      </geometry>
+      <material name="white" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://my_robot_description/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="yuntai_joint1" type="revolute">
+    <origin xyz="-0.017135 -0.018308 0.018921" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="link1" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="2.94" velocity="4.7" />
+  </joint>
+
+  <link name="link2">
+    <inertial>
+      <origin xyz="0.0147933766283957 0.000359851819586466 -0.000341765102755642" rpy="0 0 0" />
+      <mass value="0.019578307488806" />
+      <inertia ixx="1.31233972746423E-06" ixy="-5.21115848269479E-09" ixz="-5.81597879547027E-09"
+               iyy="3.36934206100943E-06" iyz="-3.4473296802718E-10" izz="2.80834051774756E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://my_robot_description/meshes/link2.STL" />
+      </geometry>
+      <material name="white" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://my_robot_description/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="yuntai_joint2" type="revolute">
+    <origin xyz="0 0 0.046259" rpy="1.5708 1.5708 0" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="3.14" effort="2.94" velocity="4.7" />
+  </joint>
+
+
+
+</robot>

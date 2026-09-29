@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>my_robot_moveit_demo</name>
+  <version>0.0.0</version>
+  <description>云台MoveIt控制demo，使用MoveGroupInterface</description>
+  <maintainer email="DYH-hxyz@user.noreply.github.com">dyh</maintainer>
+  <license>TODO: License declaration</license>
+
+  <!-- 运行依赖，必须加 -->
+  <depend>rclpy</depend>
+  <depend>moveit</depend>
+  <depend>moveit_msgs</depend>
+  <depend>trajectory_msgs</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

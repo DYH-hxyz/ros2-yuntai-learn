@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<library path="my_robot_hardware">
+  <class name="my_robot_hardware/YuntaiHardwareInterface"
+         type="yuntai_hardware::YuntaiHardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      云台的真实舵机硬件接口。
+      将 forward_command_controller 的 position 命令转换为飞特 STS 舵机位置命令，
+      并读取舵机真实位置作为 position 状态。
+    </description>
+  </class>
+</library>

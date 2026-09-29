@@ -1,0 +1,5 @@
+# Default initial positions for my_robot's ros2_control fake system
+
+initial_positions:
+  yuntai_joint1: 0
+  yuntai_joint2: 0
