@@ -3,5 +3,9 @@ build
 log
 install
 
+.vscode/
+
+#不提交录屏原始文件（展示用的 GIF 已放在 docs/media/）
+*.mp4
 
 
